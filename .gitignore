@@ -1,0 +1,36 @@
+# Eclipse
+.metadata/
+*.log
+*.tmp
+*.bak
+bin/
+*.class
+.settings/
+.project
+
+# Archivos de compilación
+out/
+build/
+# Eclipse metadata
+.metadata/
+.settings/
+*.project
+*.classpath
+*.launch
+
+# Archivos de compilación
+bin/
+out/
+*.class
+
+# Archivos temporales / logs
+*.log
+*.tmp
+*.bak
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
+
+# Carpetas de librerías externas
+lib/
