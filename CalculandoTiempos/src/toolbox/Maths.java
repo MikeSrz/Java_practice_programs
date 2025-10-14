@@ -75,11 +75,9 @@ public class Maths {
 		int result;
 		//Iteración tantas veces como n.
 		for (int i = 2; i < n; i++) {
-			if (n == n-1)
-				number1 = result;
-			if (n == n-2)
-				number2 = result;
-			
+			result = lastNum + penultimate;
+			lastNum = penultimate;
+			penultimate = result;
 		}
 		return lastNum;
 	}

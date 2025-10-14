@@ -1,16 +1,26 @@
+//Autor: Michael
+//Fecha: 13/10/2025
+//Descripción: Calcular factorial utilizando BigInteger.
 
-public class Propuesta23 {
-import java.math.BigInteger;
-
-		 public static void main(String[] args) {
-		 BigInteger num1 = new BigInteger("123456789123456789");
-		 BigInteger num2 = new BigInteger("987654321987654321");
-		 BigInteger suma = num1.add(num2);
-		 System.out.println("Suma: " + suma);
-		 BigInteger multiplicacion = num1.multiply(num2);
-		 System.out.println("Multiplicación: " + multiplicacion);
-		 }
-		}
+import java.io.*;
+import java.math.*;
+	
+public class Propuesta23 {	
+	public static BigInteger calcFactorial(BigInteger n) {
+		if (n.equals(BigInteger.ZERO))
+			return BigInteger.ONE;
+		
+		return n.multiply(calcFactorial(n.subtract(BigInteger.ONE)));
 	}
-
+	
+	public static void main(String[] args) throws IOException {
+		int number;
+		String line;
+		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.print("Ingrese número número: ");
+		line = keyboard.readLine();
+		number = Integer.parseInt(line);
+		System.out.println(calcFactorial(BigInteger.valueOf(number)));
+	}
 }

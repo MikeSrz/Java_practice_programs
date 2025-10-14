@@ -12,6 +12,7 @@ public class Main {
 		//System.out.println(Maths.calcFactorial(5));
 		
 		//System.out.println(Algorith.reverseNumber(500));
+		
 		System.out.println(Maths.calcFibonacci(5));
 	}
 
