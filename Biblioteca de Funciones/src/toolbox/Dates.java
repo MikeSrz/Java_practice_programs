@@ -84,4 +84,30 @@ public class Dates {
 
 	        return years + " años, " + months + " meses y " + days + " días";
 	    }
+	 
+	 public static LocalDate buildRandomDate(LocalDate min, LocalDate max) {
+			final String ERROR_MESSAGE = "[ERROR] Introduce un formato correcto YYYY/m/d para fecha.";
+	        LocalDate date = null;
+	        boolean isValidDate = false;
+
+	        while (!isValidDate) {
+	            try {
+	                System.out.println(mensaje);
+	                System.out.print("Año: ");
+	                int year = sc.nextInt();
+	                System.out.print("Mes: ");
+	                int month = sc.nextInt();
+	                System.out.print("Día: ");
+	                int day = sc.nextInt();
+
+	                date = LocalDate.of(year, month, day); // Si no es válida, lanza excepción
+	                isValidDate = true;
+	            } catch (Exception e) {
+	                System.out.println(ERROR_MESSAGE);
+	                sc.nextLine(); // limpiar el buffer
+	            }
+	        }
+	        return date;
+	    }
+		
 }

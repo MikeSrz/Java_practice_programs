@@ -61,7 +61,6 @@ public class Ejercicio3 {
 		pprintMatrix(matrix);
 		pprintVector(avgPerRowMatrix(matrix));
 		System.out.printf("La media total es: %.2f ",totalAvgMatrix(matrix));
-		
 	}
 
 }
