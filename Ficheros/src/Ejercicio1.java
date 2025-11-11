@@ -27,7 +27,7 @@ public class Ejercicio1 {
 	public static void main(String[] args) throws IOException {
 		String evens = "Pares: ";
 		String odds = "Impares: ";
-		for (int i = 0; i <= 50; i++) {
+		for (int i = 0; i <= 100; i++) {
 			if (i%2 == 0)
 				evens += (i+" ");
 			else

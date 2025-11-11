@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Ejercicio3 {
+public class Ejercicio4 {
 	public static void generateFile(String flName, String str) throws IOException {
 		FileWriter writer;
 		BufferedWriter writeFilter;
@@ -30,7 +30,7 @@ public class Ejercicio3 {
 	}
 	
 	public static int countLines(String flName) throws IOException{ /*me gustaría, en un futuro, meter un binario con flags,
-	 												opciones contar{lineas ó caracteres}*/
+	 																	Opciones contar{lineas ó caracteres}*/
 		FileReader reader;
 		BufferedReader readerFilter;
 		String line;
@@ -75,30 +75,17 @@ public class Ejercicio3 {
 		readerFilter.close();
 		return txt;
 		}
-
+	
 	public static void main(String[] args) throws IOException {
-		String text;
-		int lineCount;
-		int charCount;
-		
-		text = extractText("theVeldt.txt");
-		lineCount = countLines("theVeldt.txt");
-		
-		String[] words = textToArray(text);
-		
-		charCount = 0;
+		generateFile("fichero.txt","Hola que tal Rigoberto");
+		String txt = extractText("fichero.txt");
+		String [] words = textToArray(txt);
+		String aux = "";
 		for (String word : words) {
-			charCount += word.length();
+			if (word.length() > 5)
+				aux += word+" ";
 		}
-		/*	FUNCION HISTOGRAMA.
-		int [] Frequency;
-		for (String word : words) {
-			String[] letters = word.trim().split("");  
-				for (String c : letters) {
-					
-				}
-		}*/
-		System.out.println("La cuenta de lineas es: " + lineCount+ "| La cuenta de letras es: "+ charCount +"| La cuenta de palabras es: " + words.length+ "|La longitud promedio de las palabras es: " + ((float)charCount/words.length));
+		generateFile("fichero2.txt",aux);
 	}
 
 }
