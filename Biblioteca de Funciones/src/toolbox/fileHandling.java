@@ -2,9 +2,14 @@ package toolbox;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class fileHandling {
 	public static int countLines(String flName) throws IOException{ 
@@ -63,5 +68,38 @@ public class fileHandling {
 		return txt;
 		}
 	
-	
+	public static void main(String[] args) throws IOException {
+		File dir = new File("ruta/del/directorio");
+
+        if (dir.exists() && dir.isDirectory()) {
+            System.out.println("El directorio existe.");
+        } else {
+            System.out.println("El directorio NO existe.");
+            dir.mkdirs();
+            System.out.println("Directorio creado.");
+        }
+        
+        Path path = Paths.get("C:/Users/ejemplo/documento.txt");
+        Files.exists(path);        // comprueba si existe
+        Files.isDirectory(path);   // comprueba si es un directorio
+        Files.createDirectories(path); // crea directorios si no existen
+        Files.delete(path);        // borra archivo o directorio
+     
+        if (Files.exists(path) && Files.isDirectory(path)) {
+            System.out.println("El directorio existe.");
+        } else {
+            System.out.println("El directorio NO existe.");
+            Files.createDirectories(path);
+            System.out.println("Directorio creado.");
+            Files.delete(path);
+        }
+        
+        //RUTA ACTUAl
+        Path currentPath = Paths.get("").toAbsolutePath();
+        
+        //CONCATENANDO RUTAS
+        Path base = Paths.get("").toAbsolutePath();
+        Path relative = Paths.get("textos/text.txt");
+        Path dst = base.resolve(relative);
+	}	
 }
