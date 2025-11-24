@@ -32,7 +32,7 @@ public class Ejercicio5 {
 		Set<Integer>[] winnerNumber = new HashSet[6];
 		int count = 0;
 		long startTime = System.nanoTime();
-		randomize (winnerNumber);
+		randomize(winnerNumber);
 		boolean isWinner = false;
 		while (!isWinner) {
 			randomize(myLotto);

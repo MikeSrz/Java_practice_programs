@@ -18,14 +18,26 @@ public class Algorith {
 		}
 		return false;
 	}
-	public static void randomize(int vct[]) {
+	
+	public static int[] reverseArray(int[] mtrx) {
+		int reversedAr[] = new int[mtrx.length];
+		int len = mtrx.length;
+		int limit = len/2;
+		for (int i = 0; i <= limit;i++) {
+			reversedAr[i] = mtrx[len-i-1];
+			reversedAr[len-i-1] = mtrx[i];
+		}
+		return reversedAr;
+	}
+	
+	public static void randomize(int vct[], int limit) {
 		//Recordemos que se pasa por referencia, 
 		//así que con poner void nos basta para editar el array original.
 		Random rand = new Random();
 		int ranNumber;
 		for (int i = 0; i < vct.length; i++) {
 			do {
-				ranNumber = rand.nextInt(1,50);
+				ranNumber = rand.nextInt(1,limit);
 			}while(arrayContains(vct, ranNumber));
 
 			vct[i] = ranNumber;
@@ -37,7 +49,35 @@ public class Algorith {
 			return number;
 		return number%10+countDigits(number/10);
 	}
+	public static int throwDices(int times) {
+		Random ran = new Random();
+		int ac = 0;
+		int dice;
+		for (int i = 0; i < times; i++) {
+			dice = ran.nextInt(1,7);
+			ac = ac + dice;
+		}
+		return ac;		
+	}
 	
-	
+	public static boolean arrayBinarySearch(int vct[], int number) {
+		int low = 0;
+		int high = vct.length -1;
+		int mid;
+		int estimated;
+		while (low <= high) {
+			mid = (int)((low+high)/2);
+			estimated = vct[mid];
+			if (estimated == number) {
+				return true;
+			}
+			else if (estimated > number)
+				high = mid - 1;
+			else {
+				low = mid + 1;
+			}
+		}
+		return false;
+	}
 	
 }

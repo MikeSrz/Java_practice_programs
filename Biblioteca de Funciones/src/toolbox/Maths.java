@@ -41,7 +41,8 @@ public class Maths {
 	
 	public static long calcFibonacci(long n) {
 		long fibonacci = n;
-		
+		number1 = 0;
+		number2 = 0;
 		if (n <= 1)
 			return fibonacci;
 		//Comienzo de fibonacci
@@ -65,6 +66,15 @@ public class Maths {
 			//CASO BASE
 			return b;
 		return maxCommonDiv(b,a%b);
+	}
+	
+	public static double avgResults(int[] freq,int [] values, long n) {
+		long sumResults = 0;
+		for (int i = 0; i < freq.length; i++) { 
+				sumResults+=(freq[i]*values[i]);
+		}
+		
+		return sumResults/n;
 	}
 	
 	public static long calcBinomial(int n, int k) { 

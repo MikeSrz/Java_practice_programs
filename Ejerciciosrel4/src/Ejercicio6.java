@@ -2,7 +2,7 @@ import java.util.Random;
 import java.io.*;
 
 public class Ejercicio6 {
-	public static boolean arrayContainsB(int vct[], int number) {
+	public static boolean arrayBinarySearch(int vct[], int number) {
 		int low = 0;
 		int high = vct.length -1;
 		int mid;
