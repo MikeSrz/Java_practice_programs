@@ -13,7 +13,7 @@ public class Main {
 		
 		//System.out.println(Algorith.reverseNumber(500));
 		// System.out.println(Maths.calcFibonacci(5));
-		
+		long endTime = System.nanoTime();
 	}
 
 }

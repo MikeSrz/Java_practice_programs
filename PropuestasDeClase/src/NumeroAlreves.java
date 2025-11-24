@@ -4,7 +4,7 @@
  Descripción: Algoritmo que invierte números.
  */
 
-public class Propuesta16 {
+public class NumeroAlreves {
 	
 	public static int revertDigits(int number, int invertedNumber) {
 		if (number == 0)

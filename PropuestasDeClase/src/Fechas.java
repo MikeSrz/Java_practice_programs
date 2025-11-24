@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
-public class propuesta17 {
+public class Fechas {
 
 	public static void main(String[] args) {
 		final String TITLE = "MANEJO DE FECHAS";

@@ -15,7 +15,7 @@ enum MesAño {
 	DICIEMBRE,
 }
 
-public interface Propuesta3 {
+public interface SwitchCase {
 	
 	public static void main(String[] args) {
 		MesAño mes = MesAño.ENERO;

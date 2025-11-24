@@ -1,5 +1,7 @@
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Ejercicio5 {
 	
@@ -26,12 +28,11 @@ public class Ejercicio5 {
 	}
 	
 	public static void main(String[] args) {
-		int myLotto[] = new int[6];
-		int winnerNumber[] = new int[6];
+		Set<Integer>[] myLotto = new HashSet[6];
+		Set<Integer>[] winnerNumber = new HashSet[6];
 		int count = 0;
-		
 		long startTime = System.nanoTime();
-		randomize(winnerNumber);
+		randomize (winnerNumber);
 		boolean isWinner = false;
 		while (!isWinner) {
 			randomize(myLotto);

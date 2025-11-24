@@ -65,7 +65,7 @@ public class Dates {
         return date;
     }
 	
-	 public static String detailedDiff(LocalDate f1, LocalDate f2) {
+	 public static String detailedDateDiff(LocalDate f1, LocalDate f2) {
 	        // Asegurar que f1 <= f2
 	        if (f1.isAfter(f2)) {
 	            LocalDate temp = f1;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Propuesta12 {
+public class HoraMinutoSegundos {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

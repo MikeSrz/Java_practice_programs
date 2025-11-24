@@ -1,10 +1,15 @@
+package colecciones;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-public class EjercicioParam {
+public class frequenciaPalabras {
+
 	public static void generateFile(String flName, String str) throws IOException {
 		FileWriter writer;
 		BufferedWriter writeFilter;
@@ -43,6 +48,28 @@ public class EjercicioParam {
 		readerFilter.close();
 		return txt;
 		}
+	
+	
+	public static void countWordFrequencies(Map<String, Integer> substrings, String src) throws IOException {
+		FileReader reader = new FileReader(src);
+		BufferedReader readerFilter = new BufferedReader(reader);
+		String line;
+		line = readerFilter;
+		while (line = br.read() != 1) {
+			
+			readerFilter.readLine();
+		}
+	}
+	
+	public static void countWordFrequencies(String txt, String src) throws IOException {
+		FileReader reader = new FileReader(src);
+		BufferedReader readerFilter = new BufferedReader(reader);
+		String line;
+		line = readerFilter;
+		while (line != null) {
+			readerFilter.readLine();
+		}
+	}
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -52,23 +79,14 @@ public class EjercicioParam {
 			String txt;
 			String srcFile = args[0];
 			String dstFile = args[1];
-			String replaced = null;
-			String replacement = null;
-			txt = extractText(srcFile);
+			
+			Map<String, Integer> substringsPicked = new HashMap<>();
 			for (int i = 2; i < args.length; i++) {
-				if (i % 2 == 0) {
-					replaced = args[i];
-				}
-				else {
-					replacement = args[i];
-				}
-				txt = txt.replace(replaced, replacement);
+				 wordsPicked.getOrDefault(args[i], 0);
 			}
-			generateFile(dstFile, txt);
-			System.out.println("El fichero modificado ha sido generado.");
-			printFile(srcFile);
-			System.out.println("Fichero modificado:");
-			printFile(dstFile);
+			
+			
+			
 			} catch (IOException error) {
 				//Afinar error.
 				System.out.println("El fichero no se ha podido leer o modificar, quién sabe.");

@@ -1,12 +1,13 @@
 /*
 Autor: Michael
 Fecha: 04/10/2025
-Descripción: Midiendo el tiempo que tarda en ejecutarse un programa que calcula factorial, MÉTODO BURRO. 
+Descripción: Midiendo el tiempo que tarda en ejecutarse un programa que calcula factorial, MÉTODO CON RECURSIÓN. 
  */
+
 import java.lang.NumberFormatException;
 import java.util.concurrent.TimeUnit;
 import java.io.*;
-public class Propuesta13 {
+public class FactorialRecursivo{
 	
 	//EXCEPCION PERSONALIZADA
 	public static class NegativeException extends Exception{
@@ -16,17 +17,14 @@ public class Propuesta13 {
 	}
 		
 	public static long calculateFactorial(int n) {
-		//ACUMULADOR DEL RESULTADO
-		long factorial = 1;
-		for (long i = 1; i <= n; i++) {
-		factorial = factorial*i;	
-		}
-		return factorial;
+		if (n == 0)
+			return 1;
+		return n*calculateFactorial(n-1);
 	}
 	
 	public static void main(String[] args) throws IOException {
 		
-		long startTime = System.currentTimeMillis();
+		long startTime = System.nanoTime();
 		final String TITLE = "Calcular Factorial";
 		int number;
 		String line;
@@ -44,9 +42,6 @@ public class Propuesta13 {
 				line = keyboard.readLine();
 				number = Integer.parseInt(line);
 			
-				if ( 0 > number)
-					throw new NegativeException("[ERROR]No se contemplan los números negativos.");
-				break;
 				
 			} catch (NumberFormatException error) {
 				System.out.println("[ERROR] El valor introducido no es un número natural.");
@@ -57,8 +52,8 @@ public class Propuesta13 {
 		}
 		//LLAMADA A FUNCIÓN FACTORIAL E IMPRESIÓN DE RESULTADO.
 		System.out.println("El factorial es: " + calculateFactorial(number));
-		long endTime = System.currentTimeMillis();
 		keyboard.close();
-		System.out.println("Tiempo de ejecución en milisegundos: " +(endTime - startTime));
+		long endTime = System.nanoTime();
+		System.out.println("Tiempo de ejecución en milisegundos: " +(endTime - startTime)/1000000);
 }
 }

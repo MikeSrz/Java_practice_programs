@@ -16,31 +16,7 @@ public class Maths {
 	}
 	
 	public static boolean detectPrime(int n) {
-		boolean isPrime = false;
-			if (n >= 0) {
-				//COMPROBACIÓN DE PRIMOS BÁSICOS
-				if (n == 2 || n == 1) {
-					isPrime = true;
-					return isPrime;
-				}
-				else if (n % 2 == 0) { 
-					return isPrime;
-				}
-				else {
-					//COMPROBACIÓN BRUTA DE PRIMOS
-					isPrime = true;
-					for (int counter = 3; n/2 > counter; counter += 2) {
-						if (n % counter == 0) {
-							isPrime = false;
-							return isPrime;
-						}
-					}
-					return isPrime;
-				}
-			}
-			else {
-				return isPrime;
-			}
+		return 0;
 	}
 	
 	public static long calcFactorial(int n) {
@@ -82,5 +58,31 @@ public class Maths {
 			
 		}
 		return lastNum;
+	}
+	
+	public static int maxCommonDiv(int a, int b) {
+		if (a%b == 0) 
+			//CASO BASE
+			return b;
+		return maxCommonDiv(b,a%b);
+	}
+	
+	public static long calcBinomial(int n, int k) { 
+		if (k >= n) 
+			//CASO BASE
+			return 1;
+		return (n*calcBinomial(n-1, k))/
+				((n-k));
+	}
+	
+	public static void showMultTables(int end) {
+		final int END_OF_MULTIPLICATION = 10;
+		for (int i = 0; i <= end; i++) {
+			System.out.printf("Tabla del %d%n", i);
+			for (int j = 1;j <= END_OF_MULTIPLICATION ;j++) {
+				System.out.printf("%3d x %3d = %6d%n", i, j, i * j);
+			}
+			System.out.println("-".repeat(15));
+		}
 	}
 }

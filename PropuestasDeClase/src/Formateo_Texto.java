@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.InputMismatchException;
 
-public class Propuesta11 {
+public class Formateo_Texto {
 	
 	//EXCEPCIÓN PERSONALIZADA
 	public static class NegativeNumberException extends Exception{

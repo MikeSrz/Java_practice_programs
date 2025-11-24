@@ -1,5 +1,5 @@
 import java.io.*;
-public class propuesta24 {
+public class HackearContraseña {
 	
 	public static String replaceVowels(String str) {
 		String vowels = "aeiouAEIOU";

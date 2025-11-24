@@ -5,7 +5,7 @@
 import java.io.*;
 import java.math.*;
 	
-public class Propuesta23 {	
+public class FactorialBigInteger {	
 	public static BigInteger calcFactorial(BigInteger n) {
 		if (n.equals(BigInteger.ZERO))
 			return BigInteger.ONE;
