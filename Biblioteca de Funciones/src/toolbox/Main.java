@@ -51,7 +51,8 @@ public class Main {
 		System.out.print(lista);
 		Collections.rotate(lista, 2); // Rota 2 posiciones a la derecha
 		System.out.println(lista);
-		
+		Collections.sort(lista, Collections.reverseOrder()); //Ordenar lista
+		Collections.sort(lista);//ordenar menor a mayot
 		// PRIMITIVO -> WRAPPER
 		char c = 'a';
 		Character Chao = Character.valueOf(c);
