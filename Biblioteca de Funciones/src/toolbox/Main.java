@@ -27,6 +27,13 @@ public class Main {
 		System.out.print("Escriba el día de la semana (en inglés) para calcular su descuento: ");
 		DayOfWeek day = DayOfWeek.valueOf(keyboard.readLine().toUpperCase());
 	
+		
+		
+		for (Map.Entry<String,Integer> entrada : palabrasRepetidas.entrySet()) {
+            
+			System.out.print("La palabra "+entrada.getKey()+" ha aparecido "+ entrada.getValue() +(entrada.getValue() == 1 ? " vez" : " veces"));
+		}
+
 		// TODO Auto-generated method stub
 		//Scanner keyboard = new Scanner(System.in);
 		//LocalDate date = Dates.buildDate(keyboard,"Introduce una fecha");
