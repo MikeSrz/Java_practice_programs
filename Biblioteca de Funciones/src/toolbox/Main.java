@@ -62,6 +62,16 @@ public class Main {
 		char c2 = Chao2.charValue();
 		
 		
+		HashSet<Integer> numeros1 = new HashSet<>(Arrays.asList(1,2,3,4));
+		HashSet<Integer> numeros2 = new HashSet<>(Arrays.asList(2,3,4));
+
+		numeros1.addAll(numeros2);
+		numeros1.retainAll(numeros2);
+		numeros1.removeAll(numeros2);
+		
+		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 2, 3, 3, 3));
+		HashSet<Integer> sete = new HashSet<>(list);// {1, 2, 3}
+		
 		
 		String texto = "Hola";
 		 // Opción 1: charAt()
@@ -74,7 +84,7 @@ public class Main {
 		//COlecciones.
 		// Array → ArrayList
 		String[] array = {"A", "B", "C"};
-		ArrayList<String> lista = new ArrayList<>(Arrays.asList(array));
+		ArrayList<String> list2 = new ArrayList<>(Arrays.asList(array));
 		// ArrayList → Array
 		String[] nuevoArray = lista.toArray(new String[0]);
 		// ArrayList → HashSet (eliminar duplicados)
